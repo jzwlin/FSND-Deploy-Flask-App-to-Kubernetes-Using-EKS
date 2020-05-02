@@ -11,5 +11,5 @@ RUN pip install flask
 RUN pip install gunicorn
 RUN pip install pytest
 
-#Define an entrypoint which will run the main app using the Gunicorn WSGI server 
-ENTRYPOINT ["python","main.py"]
+#Define an entrypoint which will run the main app using the Gunicorn WSGI server
+ENTRYPOINT ["gunicorn", "-b", ":8080", "main:APP"]
